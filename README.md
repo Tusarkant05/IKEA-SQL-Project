@@ -1,1 +1,1 @@
-# IKEA-SQL-Project
+# IKEA-Retail sales SQL project
