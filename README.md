@@ -71,4 +71,63 @@ Here’s an overview of the database structure:
 11. Identify the top three products with the highest sales qty in each country.
 12. Calculate the average discount given per product caytegory across all stores.
 13. Find the number of unique products sold in each store within 'Furniture' category.
-14. 
+14. Categorize stores based on sales performance as "High," "Medium," or "Low" using the total sales revenue.
+15. Create a column indicating if the product price is above or below the average price for its category.
+16. Display the reorder status for each product in inventory as "Low Stock" if current stock is below the reorder level, otherwise "Sufficient Stock."
+17. Identify each store’s top-selling product and categorize it as “Top Performer” or “Underperformer” based on a specified sales quantity threshold.
+18. For each product, indicate if it has a "High Discount," "Moderate Discount," or "Low Discount" based on the discount percentage.
+19. Mark stores as "Overstocked" or "Understocked" if current stock is above or below reorder level.
+20. List the top five products by sales quantity within each store.
+21. Rank each product by quantity sold in each store.
+22. Retrieve the top-selling product in each category.
+23. Assign a unique ranking to each product based on its sales quantity, grouped by country.
+24. For each store, show the order history of products sorted by the order date and assign a sequential number to each order.
+
+
+## Getting Started
+
+### Creating Tables
+
+```sql
+CREATE TABLE products
+(
+	product_id VARCHAR(10) PRIMARY KEY,	
+	product_name VARCHAR(35) ,
+	category	VARCHAR(20),
+	subcategory	VARCHAR(20),
+	unit_pice FLOAT
+);
+```
+
+```sql
+CREATE TABLE stores
+(
+	store_id	VARCHAR(10) PRIMARY KEY,
+	store_name	VARCHAR(25),
+	city	VARCHAR(25),
+	country VARCHAR(25)
+);
+```
+
+```sql
+CREATE TABLE sales
+(
+	order_id 	VARCHAR(10) PRIMARY KEY,
+	order_date	DATE,
+	product_id	VARCHAR(10) REFERENCES products(product_id), --FK
+	qty	INT,
+	discount_percentage	FLOAT,
+	unit_price FLOAT,	
+	store_id VARCHAR(10) REFERENCES stores(store_id) --FK
+);
+```
+
+```sql
+CREATE TABLE inventory
+(
+	inventory_id SERIAL PRIMARY KEY,
+	product_id	VARCHAR(10) REFERENCES products(product_id), --FK
+	current_stock 	INT,
+	reorder_level INT
+);
+```
