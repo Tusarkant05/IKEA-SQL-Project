@@ -14,7 +14,7 @@ Welcome to the IKEA Retail Sales SQL Project! This project leverages a detailed 
 ---
 
 ## Introduction
-The IKEA Retail Sales SQL project demonstrates the use of SQL to analyze retail dat, including sales records, store performance, product trends, and inventory status. Using a robust schema, this project answers critical business questions and provides actionable insights to optimize IKEA's operational efficiency and profitability.
+The IKEA Retail Sales SQL project demonstrates the use of SQL to analyze retail data, including sales records, store performance, product trends, and inventory status. Using a robust schema, this project answers critical business questions and provides actionable insights to optimize IKEA's operational efficiency and profitability.
 
 ## Project Structure
 
